@@ -86,7 +86,7 @@
 - 数据类型A，B，C，都是最正常的解析方式
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/3m2tp.jpg)
 - 数据类型D，因为他是集合类型，我们不能传个List.class让框架去解析数据，框架怎么知道我们集合的泛型是什么呢，毕竟大家都知道java的泛型是擦除的，那么怎么办呢，Gson还提供了另一个方法，我们可以传一个Type，Type是个接口，我们的Class对象就是实现了Type接口的，解析代码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/84psv.jpg)
+![](http://7xss53.com1.z0.glb.clouddn.com/markdown/caprh.jpg)
 - 我们都知道网路的数据是以流的形式进行传递的，我们再解析数据的时候，把流先解析成JSON字符串，然后在通过Gson解析成对象这个过程是没必要的，如果大量的请求发生，是不是就有大量的数据要被转成JSON字符串，数据量小还行，一旦较大，连请求都发生OOM了，这并不是我们希望看到的，那么有没有办法能直接把流解析成对象呢，不要转成中间的字符串对象，当然是可以的，Gson框架也为我们提供了这个方法，解析代码如下：
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/8csma.jpg)
 
