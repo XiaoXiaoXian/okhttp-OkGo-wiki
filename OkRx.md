@@ -40,8 +40,8 @@ OkRx与OkRx2具有相同的使用方法，相同的Api调用方式，所以该�
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fgia4fpy28j30ws01u3yn.jpg)
 
 那么其实Converter的写法，和自定义Callback的写法原理是一样的，详细参考
-- [OkGo内置Callback介绍]()
-- [JsonCallback自定义方法]()。
+- [OkGo内置Callback介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Callback)
+- [JsonCallback自定义方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/JsonCallback)。
 
 我们也内置了
 - **StringConverter**：按文本解析，解析的编码依据服务端响应头中的`Content-Type`中的编码格式，自动进行编码转换，确保不出现乱码。
