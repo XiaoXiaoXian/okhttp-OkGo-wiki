@@ -12,7 +12,7 @@
 
 ### 1. AbsCallback
 对`Callback`的默认包装，除`onSuccess()`和`convertResponse()`方法为抽象方法，其余均为空实现，源码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/m8b2e.jpg)
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi75vp68fj314w0q6why.jpg)
 
 ### 2. StringCallBack
 对`convertResponse()`按文本解析，解析的编码依据服务端响应头中的`Content-Type`中的编码格式，自动进行编码转换，确保不出现乱码，实现源码如下：
@@ -31,12 +31,13 @@
 
 ### 1. DialogCallback
 我们经常需要在网络请求前显示一个loading，请求结束后取消loading，这是个重复的工作，我们完全可以自定义一个`Callback`，让这个`Callback`帮我们完成这个工作，那么我们就需要用到`Callback`中的两个回调方法，`onStart()`和`onFinish()`，详细源码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/xw6xy.jpg)
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fgi76xoo9vj315k0ton1o.jpg)
 
 ### 2. EncriptCallback
 有时候我们需要在请求前，将我们的参数都加密或者签名，然而加密也是个重复的工作，我们没必要每次都写，也可以放在自定义的`Callback`中，源码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/pp14n.jpg)
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fgi77etrfbj315k1jpk17.jpg)
 
 相信你要是看到这里，对`Callback`的功能一定有个全新的认识，他可以帮助你减少很多重复工作。
 
 关于自定义`JsonCallback`，需要单独的一篇文档来说明，[需要的话请猛戳这里]()。
+
