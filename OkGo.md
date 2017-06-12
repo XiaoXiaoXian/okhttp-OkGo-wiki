@@ -95,7 +95,7 @@
 
 ### 8.取消请求
 之前讲到，我们为每个请求前都设置了一个参数`tag`，取消就是通过这个`tag`来取消的。通常我们在`Activity`中做网络请求，当`Activity`销毁时要取消请求否则会发生内存泄露，那么就可以在`onDestory()`里面写如下代码：
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fgi8fiotk7j31180a60ts.jpg)
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fgihsebgyjj31180a6js9.jpg)
 
 ### 9.同步请求
 
