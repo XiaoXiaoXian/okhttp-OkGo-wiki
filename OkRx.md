@@ -81,7 +81,7 @@ OkRx与OkRx2具有相同的使用方法，相同的Api调用方式，所以该�
 其实关于`adapt()`方法还有个重载方法，可以额外传递一个`AdapterParam`参数，如下：
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fgiortuyf6j310m08075e.jpg)
 目前，`AdapterParam`对象只有一个参数，如下：
-![](https://ws2.sinaimg.cn/large/006tNbRwly1fgiot4nquyj30w807egm5.jpg)
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fgipi2ulqcj30w807e3yw.jpg)
 我们都知道，okhttp有两种请求方式，一种是同步请求，一种是异步请求，那么这个参数就是控制，我把当前的Call&lt;T>对象适配成Observable&lt;T>时，是使用同步还是异步的方法。如果是使用同步的方法，对应的，我们就使用的是okrx2源码中的`CallExecuteObservable`对象来适配，如果是异步，那么就使用`CallEnqueueObservable`对象来适配。他们有什么区别的，其实只有一个最大的区别，就是缓存的使用。
 
 默认情况下，我们使用的是异步请求来适配的，使用方式和okgo使用缓存一样，指定`cacheKey`和`cacheMode`就行了，如下：
