@@ -41,6 +41,7 @@
 - [基本使用方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E8%AF%B7%E6%B1%82%E5%86%99%E6%B3%95)
 - [Converter详解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#converter%E8%AF%A6%E8%A7%A3)
 - [CallAdapter详解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#calladapter%E8%AF%A6%E8%A7%A3)
+- [OkRx使用缓存](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#okrx%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98)
 - [取消请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)
 
 ### [OkDownload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload)
