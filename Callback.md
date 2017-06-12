@@ -27,7 +27,7 @@
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/3xub1.jpg)
 
 ## 高级自定义Callback
-由此可以看出来，该网络框架的核心，即为`Callback`的使用程度，例如我们可以尝试自定义一个JsonCallback，将网络返回的JSON数据自动解析成对象，[详细的自定义方法请猛戳这里]()。
+由此可以看出来，该网络框架的核心，即为`Callback`的使用程度，例如我们可以尝试自定义一个JsonCallback，将网络返回的JSON数据自动解析成对象，[详细的JsonCallback自定义方法请猛戳这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/JsonCallback)。
 
 ### 1. DialogCallback
 我们经常需要在网络请求前显示一个loading，请求结束后取消loading，这是个重复的工作，我们完全可以自定义一个`Callback`，让这个`Callback`帮我们完成这个工作，那么我们就需要用到`Callback`中的两个回调方法，`onStart()`和`onFinish()`，详细源码如下：
@@ -39,5 +39,5 @@
 
 相信你要是看到这里，对`Callback`的功能一定有个全新的认识，他可以帮助你减少很多重复工作。
 
-关于自定义`JsonCallback`，需要单独的一篇文档来说明，[需要的话请猛戳这里]()。
+关于自定义`JsonCallback`，需要单独的一篇文档来说明，[需要的话请猛戳这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/JsonCallback)。
 
