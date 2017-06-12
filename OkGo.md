@@ -32,7 +32,7 @@
 - **.params()**：该方法传递键值对参数，格式也是http协议中的格式，详细参考上面的http协议连接。
 - **.addUrlParams() .addFileParams() .addFileWrapperParams()**：这里是支持一个key传递多个文本参数，也支持一个key传递多个文件参数，详细也看上面的http协议连接。
  
-![](https://ws2.sinaimg.cn/large/006tNbRwly1fgi7o0n1itj315s1medpg.jpg)
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fgiicqxi1ej315s1metik.jpg)
 
 ### 2.基本请求
 那么我们不可能每次请求都写上面那么一大堆，这里可以看到，一次简单的请求，这么写就够了。
