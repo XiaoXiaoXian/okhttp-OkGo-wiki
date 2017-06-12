@@ -100,7 +100,7 @@
 
 ## Callback中解析
 到这里我们会定义数据格式，也会使用Gson来解析泛型数据了，那么可以开始写我们的JsonCallback了，而解析数据需要一个class或者type，我们用构造传递进去就可以了，如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/l7zi8.jpg)
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi79fq6y0j31480p00wf.jpg)
 
 自定义的JsonCallback写完了，我们需要使用它，使用的代码如下：
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/2gx2m.jpg)
@@ -111,10 +111,10 @@
 如果你想继续深入，那么就请继续看，看不懂或者不想看的，上面的JsonCallback就已经够用了。
 
 鼓起勇气，来继续，我们要优化什么呢？我明明已经在JsonCallback中写了泛型Login，我不想还要构造方法中传递进去，我感觉很多余，没有必要，行，那我们先上代码，改完后的样子如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/cs8c5.jpg)
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fgi7a0rme4j313q0h20vg.jpg)
 
 调用代码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/mrher.jpg)
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fgi7a97zp6j31280iumzj.jpg)
 
 看起来简单干净多了，没有额外的构造方法，不需要传递type或者class，就改了两行很神奇的代码，这两行代码的作用就是**解析出当前类的父类上的泛型的真实泛型**，注意这个黑体加粗的字，如果有不明白的，参考前面给出讲解泛型的几篇文章的链接，特别是第一篇，好好看看，就明白了。
 
@@ -147,7 +147,7 @@
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/z57j2.jpg)
 
 那么`JsonCallback`中就需要做改动了，详细的原理就不说了，直接上代码，详细看注释：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/n3vxd.jpg)
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi7am6wakj315s1lcn88.jpg)
 
 ## 总结
 分析优化前与优化后的写法，很明显优化前要方便、简单、通用，优化后更麻烦，还难以理解。那我在demo中为什么不使用优化前的方式呢？
