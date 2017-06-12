@@ -1,39 +1,48 @@
-### 首页
-- 使用方法
-- 注意事项
-- 网络抓包
-- 混淆配置
+### [首页](https://github.com/jeasonlzy/okhttp-OkGo/wiki)
+- [联系方式](https://github.com/jeasonlzy/okhttp-OkGo/wiki#联系方式)
+- [注意事项](https://github.com/jeasonlzy/okhttp-OkGo/wiki#注意事项)
+- [网络抓包](https://github.com/jeasonlzy/okhttp-OkGo/wiki#网络抓包)
 
-### 初始化(必看)
+### [初始化](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init)
+- [全局配置](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init#全局配置)
 
-### 自定义JsonCallback
+### [Callback](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Callback)
+- [基本介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Callback#callback介绍)
+- [内置Callback](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Callback#内置callback)
+- [自定义Callback](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Callback#高级自定义callback)
+- [JsonCallback](https://github.com/jeasonlzy/okhttp-OkGo/wiki/JsonCallback)
 
-### 缓存使用
-- OkGO强大的缓存使用介绍
+### [缓存使用](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache)
+- [缓存api介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#注意事项)
+- [callback回调顺序](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#回调顺序)
+- [项目中使用缓存]()
 
-### Cookie和Session
-- cookie的使用与session的保持保持保持保持保持
+### [Cookie管理](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie)
+- [什么是cookie](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie#科普概念)
+- [okgo配置cookie](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie#okgo配置)
+- [自定义cookie策略](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie#自定义cookie管理策略)
+- [cookie交互](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie#cookie交互)
 
-### OkGo文档
-- 回调方法和回调顺序
-- 请求参数的顺序
-- 基本请求方式
-- 请求Bitmap对象
-- 文件下载及进度监听
-- 文件上传及进度监听
-- up方法介绍
-- https请求
-- 取消请求
-- 同步请求
-- 内置CallBack介绍
+### [OkGo文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo)
+- [OkGo主要功能](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#okgo主要功能)
+- [请求所有配置](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#请求)
+- [基本请求方式](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#2%E5%9F%BA%E6%9C%AC%E8%AF%B7%E6%B1%82)
+- [请求Bitmap对象](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#3%E8%AF%B7%E6%B1%82bitmap)
+- [文件下载及进度监听](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#4%E5%9F%BA%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD)
+- [上传String类型的文本](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#5%E4%B8%8A%E4%BC%A0string%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E6%9C%AC)
+- [上传JSON类型的文本](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#6%E4%B8%8A%E4%BC%A0json%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E6%9C%AC)
+- [上传文件及进度监听](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#7%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6)
+- [取消请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#8%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)
+- [同步请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#9%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82)
+- [参数的顺序](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#10%E5%8F%82%E6%95%B0%E7%9A%84%E9%A1%BA%E5%BA%8F)
 
-### OkRx2文档
-- 使用方法
+### [OkRx2文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx)
+- [主要功能](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+- [基本使用方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E8%AF%B7%E6%B1%82%E5%86%99%E6%B3%95)
+- [Converter详解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#converter%E8%AF%A6%E8%A7%A3)
+- [CallAdapter详解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#calladapter%E8%AF%A6%E8%A7%A3)
+- [取消请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)
 
-### OkDownload文档
-- 初始化
-- 创建任务
+### [OkDownload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload)
 
-### OkUpload文档
-- 初始化
-- 创建任务
+### [OkUpload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload)
