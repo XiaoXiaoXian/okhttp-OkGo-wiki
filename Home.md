@@ -6,13 +6,13 @@
  * 如果遇到问题欢迎在群里提问，个人能力也有限，希望一起学习一起进步。
 
 ## 注意事项
- * 使用该网络框架时，必须要在 Application 中做初始化，[详细的初始化办法点击这里]()
- * `okgo`使用的`okhttp`的版本是最新的3.8.0版本，[OkGo详细文档点击这里]()
- * `okrx`是基于`RxJava`的扩展项目，[OkRx详细文档点击这里]()
- * `okrx2`是基于`RxJava2`的扩展项目，[OkRx2详细文档点击这里]()
+ * 使用该网络框架时，必须要在 Application 中做初始化，[详细的初始化办法点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init)
+ * `okgo`使用的`okhttp`的版本是最新的3.8.0版本，[OkGo详细文档点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo)
+ * `okrx`是基于`RxJava`的扩展项目，[OkRx详细文档点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx)
+ * `okrx2`是基于`RxJava2`的扩展项目，[OkRx2详细文档点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx)
  * `okserver`是对`okgo`的扩展，包含两个核心入口类：
-   - `OkDownload`是统一的下载管理，支持断点续传功能，[OkDownload详细文档点击这里]()
-   - `OkUpload`是统一的上传管理，[OkUpload详细文档点击这里]()
+   - `OkDownload`是统一的下载管理，支持断点续传功能，[OkDownload详细文档点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload)
+   - `OkUpload`是统一的上传管理，[OkUpload详细文档点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload)
  * 其他文档，请看wiki右边的导航栏
 
 ## 网络抓包
