@@ -54,7 +54,7 @@ OkRx与OkRx2具有相同的使用方法，相同的Api调用方式，所以该�
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fgiadrvl7rj30y205owez.jpg)
 
 参考okrx2源码的目录结构如下：
-![](https://ws4.sinaimg.cn/large/006tNbRwly1fgiag3j5k6j31120m8gnm.jpg)
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fgiop6ty7zj30u60mgdht.jpg)
 在adapter包下，命名规则分为这么几组：
 
 开头的意思：
@@ -76,6 +76,22 @@ OkRx与OkRx2具有相同的使用方法，相同的Api调用方式，所以该�
 ![](https://ws2.sinaimg.cn/large/006tNbRwly1fgierm8s4aj310e058my8.jpg)
 - **Result**结尾，表示返回对象的泛型是Result&lt;T>
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fgies0jqclj310405adh1.jpg)
+
+## OkRx使用缓存
+其实关于`adapt()`方法还有个重载方法，可以额外传递一个`AdapterParam`参数，如下：
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fgiortuyf6j310m08075e.jpg)
+目前，`AdapterParam`对象只有一个参数，如下：
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fgiot4nquyj30w807egm5.jpg)
+我们都知道，okhttp有两种请求方式，一种是同步请求，一种是异步请求，那么这个参数就是控制，我把当前的Call&lt;T>对象适配成Observable&lt;T>时，是使用同步还是异步的方法。如果是使用同步的方法，对应的，我们就使用的是okrx2源码中的`CallExecuteObservable`对象来适配，如果是异步，那么就使用`CallEnqueueObservable`对象来适配。他们有什么区别的，其实只有一个最大的区别，就是缓存的使用。
+
+默认情况下，我们使用的是异步请求来适配的，使用方式和okgo使用缓存一样，指定`cacheKey`和`cacheMode`就行了，如下：
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fgip4gc17aj31120zcael.jpg)
+
+那么对于`okrx`缓存回调成功和网络请求回调成功都是回调`onNext()`方法，那么怎么区分呢，回调的`Response`对象中有个`isFromCache`方法，就是表示当前回调是来自缓存还是网络。
+
+注意事项：
+- 不同的缓存模式会导致onNext()方法具有不同的回调次数，可能一次或者两次
+- 如果使用同步方法来适配的话，缓存模式`CacheMode.FIRST_CACHE_THEN_REQUEST`是不生效的，异步才生效，原因是同步请求没法返回两次数据。
 
 ## 取消请求
 我们可以在基类创建这么两个方法，把每一个请求的`Disposable`对象都交给由统一的`CompositeDisposable`对象去管理。
