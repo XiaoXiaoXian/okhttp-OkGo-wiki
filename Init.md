@@ -8,6 +8,8 @@
 - 公共的请求头和请求参数等信息
 
 ## 不要忘记了在清单文件中注册 Aplication
+## 不要忘记了在清单文件中注册 Aplication
+## 不要忘记了在清单文件中注册 Aplication
 
 OkGo的核心配置就是构造OkHttpClient，提供一个推荐的配置方法如下：
 
