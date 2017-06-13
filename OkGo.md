@@ -104,7 +104,10 @@
 或者可以返回解析解析完成的对象，如果你使用过`Retrofit`，那么你对这个`Call`对象一定不会陌生，这里面有个方法是`converter()`，需要传递一个`Converter`接口，作用其实就是解析网络返回的数据，你也可以自定义`Converter`代码如下：
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi8mht3naj313s0i4q5g.jpg)
 
-### 10.参数的顺序
+### 10. https请求
+https的请求和http请求一模一样，只需要在初始化配置一下，[详细的https配置方法点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init#5-https%E9%85%8D%E7%BD%AE%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%A7%8D%E6%96%B9%E6%A1%88%E6%A0%B9%E6%8D%AE%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E8%AE%BE%E7%BD%AE)。
+
+### 11.参数的顺序
 添加`headers`和`params`的方法各有三处，在提交的时候,他们是有顺序的,如果对提交顺序有需要的话,请注意这里
 
 - 第一个地方，全局初始化时添加
