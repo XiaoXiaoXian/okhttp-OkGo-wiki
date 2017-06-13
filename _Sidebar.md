@@ -34,7 +34,8 @@
 - [上传文件及进度监听](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#7%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6)
 - [取消请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#8%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)
 - [同步请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#9%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82)
-- [参数的顺序](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#10%E5%8F%82%E6%95%B0%E7%9A%84%E9%A1%BA%E5%BA%8F)
+- [Https请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#10-https%E8%AF%B7%E6%B1%82)
+- [参数的顺序](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#11%E5%8F%82%E6%95%B0%E7%9A%84%E9%A1%BA%E5%BA%8F)
 
 ### [OkRx2文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx)
 - [主要功能](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
