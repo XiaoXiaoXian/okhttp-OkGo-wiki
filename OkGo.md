@@ -31,17 +31,34 @@
 - **.headers()**：该方法是传递服务端需要的请求头，如果你不知道什么是请求头，[看wiki首页关于网络抓包中的http协议链接](https://github.com/jeasonlzy/okhttp-OkGo/wiki#%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85)。
 - **.params()**：该方法传递键值对参数，格式也是http协议中的格式，详细参考上面的http协议连接。
 - **.addUrlParams() .addFileParams() .addFileWrapperParams()**：这里是支持一个key传递多个文本参数，也支持一个key传递多个文件参数，详细也看上面的http协议连接。
+
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fgjdsnbok2j315s1me122.jpg)
 
-### 2.基本请求
+### 2.Response对象介绍
+先看Response对象内部的字段：
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fgkxb7osg7j30vw074my2.jpg)
+该对象一共有5个字段，分别表示以下意思：
+- **body**：当前返回的数据，T即为数据的泛型。使用方法`body()`获取该值。
+- **throwable**：如果发生异常，回调`onError()`，该字段保存了当前的异常信息。如果请求成功，回调`onSuccess()`，该字段为`null`。使用方法`getException()`获取该值。
+- **isFromCache**：表示当前的数据是来自哪里，`true`：来自缓存，`false`：来自网络。使用方法`isFromCache()`获取该值。
+- **rawCall**：表示当前请求的真正`okhttp3.Call`对象。使用方法`getRawCall()`获取该值。
+- **rawResponse**：表示当前请求服务端真正返回的`okhttp3.Response`对象，**注意：如果数据来自缓存，该对象为null，如果来自网络，该对象才有值**。使用方法`getRawResponse()`获取该值。
+
+另外，该对象还有以下几个方法：
+- **code()**：http协议的响应状态码，如果数据来自网络，无论成功失败，该值都为真实的响应码，如果数据来自缓存，该值一直为-1。
+- **message()**：http协议对响应状态码的描述信息，如果数据来自网络，无论成功失败，该值都为真实的描述信息，如果数据来自缓存，该值一直为`null`。
+- **headers()**：服务端返回的响应头信息，如果数据来自网络，无论成功失败，该值都为真实的头信息，如果数据来自缓存，该值一直为`null`。
+- **isSuccessful()**：本次请求是否成功，判断依据是是否发生了异常。
+
+### 3.基本请求
 那么我们不可能每次请求都写上面那么一大堆，这里可以看到，一次简单的请求，这么写就够了。
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/zj44z.jpg)
 
-### 3.请求Bitmap
+### 4.请求Bitmap
 如果你知道你的请求数据是图片，可以使用这样的方法
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/rr1of.jpg)
 
-### 4.基本文件下载
+### 5.基本文件下载
 如果你要下载文件，可以这么写。
 
 `FileCallback`具有三个重载的构造方法,分别是
@@ -58,7 +75,7 @@
 
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/vpo1d.jpg)
 
-### 5.上传String类型的文本
+### 6.上传String类型的文本
 一般此种用法用于与服务器约定的数据格式，当使用该方法时，params中的参数设置是无效的，所有参数均需要通过需要上传的文本中指定，此外，额外指定的header参数仍然保持有效。</br>
 
 默认会携带以下请求头
@@ -70,7 +87,7 @@
 
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/nfli8.jpg)
 
-### 6.上传JSON类型的文本
+### 7.上传JSON类型的文本
 该方法与upString没有本质区别，只是数据格式是json,一般来说，需要自己创建一个实体bean或者一个map，把需要的参数设置进去，然后通过三方的Gson或者fastjson转换成json对象，最后直接使用该方法提交到服务器。</br>
 
 默认会携带以下请求头，请不要手动修改，okgo也不支持自己修改
@@ -78,7 +95,7 @@
 
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/gy716.jpg)
 
-### 7.上传文件
+### 8.上传文件
 上传文件支持文件与参数一起同时上传，也支持一个key上传多个文件，以下方式可以任选</br>
 
 特别要注意的是</br>
@@ -92,11 +109,11 @@
 #### 3). 如果你的服务器希望你在没有文件的时候依然使用`multipart/form-data`请求，那么可以使用`.isMultipart(true)`这个方法强制修改，一般来说是不需要强制的。
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/eh7a3.jpg)
 
-### 8.取消请求
+### 9.取消请求
 之前讲到，我们为每个请求前都设置了一个参数`tag`，取消就是通过这个`tag`来取消的。通常我们在`Activity`中做网络请求，当`Activity`销毁时要取消请求否则会发生内存泄露，那么就可以在`onDestory()`里面写如下代码：
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fgihsebgyjj31180a6js9.jpg)
 
-### 9.同步请求
+### 10.同步请求
 
 同步请求有两种方式，第一种是返回原始的Response对象，自行解析网络数据，就像这样：
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi8keykcaj31420hcdi3.jpg)
@@ -104,10 +121,10 @@
 或者可以返回解析解析完成的对象，如果你使用过`Retrofit`，那么你对这个`Call`对象一定不会陌生，这里面有个方法是`converter()`，需要传递一个`Converter`接口，作用其实就是解析网络返回的数据，你也可以自定义`Converter`代码如下：
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi8mht3naj313s0i4q5g.jpg)
 
-### 10. https请求
+### 11. https请求
 https的请求和http请求一模一样，只需要在初始化配置一下，[详细的https配置方法点击这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init#5-https%E9%85%8D%E7%BD%AE%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%A7%8D%E6%96%B9%E6%A1%88%E6%A0%B9%E6%8D%AE%E9%9C%80%E8%A6%81%E8%87%AA%E5%B7%B1%E8%AE%BE%E7%BD%AE)。
 
-### 11.参数的顺序
+### 12.参数的顺序
 添加`headers`和`params`的方法各有三处，在提交的时候,他们是有顺序的,如果对提交顺序有需要的话,请注意这里
 
 - 第一个地方，全局初始化时添加
