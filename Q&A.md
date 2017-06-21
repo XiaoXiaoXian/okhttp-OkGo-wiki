@@ -1,7 +1,10 @@
 ### 1. 遇到在5.0以上系统程序正常，5.0以下系统crash
 如果你的报错日志如下：
+
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fgslhf13tsj30g70a4q4m.jpg)
+
 那么这个问题是你使用的，mutidex打包导致的，详细解决方案查看这个链接：<https://stackoverflow.com/questions/35578135/noclassdeffounderror-for-okhttpclient>
+
 如果你不想看，直接看这个截图：
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fgsllp2pv5j30z00t8wkd.jpg)
 
@@ -14,11 +17,12 @@ headers("Content-Length", 一个数值)
 `Content-Type`将遵循以下规则，`Content-Length`永远自动根据你上传的内容的真实大小自动添加，不可修改
 
 ### 警告：
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。
+所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
+所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
+所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
 
 以下表格来自[OkGO文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#6%E4%B8%8A%E4%BC%A0string%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E6%9C%AC)的总结：
+
 |调用方法|对应的`Content-Type`值|
 |--|---|
 |upStrig()|text/plain;charset=utf-8|
@@ -32,8 +36,8 @@ headers("Content-Length", 一个数值)
 |isMultipart(true)|当你所有的`params()`都是字符串，同时你还想你的`Content-Type`是`multipart/form-data`，那么使用该方法|
 
 ### 3. okgo支持断点下载，或者断点上传吗？
-okgo不支持断点下载
-okserver支持断点下载
+okgo不支持断点下载  
+okserver支持断点下载  
 断点上传都不支持，至于为什么，看这里吧：[有没有可能加入 断点/分片 上传的功能](https://github.com/jeasonlzy/okhttp-OkGo/issues/205)
 
 ### 4. 下载进度为什么是负数？
