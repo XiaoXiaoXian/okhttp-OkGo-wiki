@@ -116,7 +116,7 @@
 ### 10.同步请求
 
 同步请求有两种方式，第一种是返回原始的Response对象，自行解析网络数据，就像这样：
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi8keykcaj31420hcdi3.jpg)
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fgsnhe57v0j31420hc40i.jpg)
 
 或者可以返回解析解析完成的对象，如果你使用过`Retrofit`，那么你对这个`Call`对象一定不会陌生，这里面有个方法是`converter()`，需要传递一个`Converter`接口，作用其实就是解析网络返回的数据，你也可以自定义`Converter`代码如下：
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi8mht3naj313s0i4q5g.jpg)
@@ -138,7 +138,7 @@ https的请求和http请求一模一样，只需要在初始化配置一下，[�
  
  那么，最终执行请求的参数的添加顺序为
  
-> Header顺序: HKAAA -> HKBBB -> HKEEE -> HKFFF -> HKCCC -> HKDDD</br>
+> Header顺序: HKAAA -> HKBBB -> HKEEE -> HKFFF -> HKCCC -> HKDDD  
 > Params顺序: PKAAA -> PKBBB -> PKEEE -> PKFFF -> PKCCC -> PKDDD
  
 ### 总结一句话就是，全局添加的在最开始，callback添加的在最后，请求添加的在中间
