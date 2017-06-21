@@ -17,9 +17,7 @@ headers("Content-Length", 一个数值)
 `Content-Type`将遵循以下规则，`Content-Length`永远自动根据你上传的内容的真实大小自动添加，不可修改
 
 ### 警告：
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
-所有up开头的方法不能与params()方法混用，如果混用，按up方法的行为来，所有params()参数丢失。  
+所有`up开头`的方法不能与`params()`方法混用，如果混用，将按`up方法`的行为来，所有`params()`设置的参数将丢失。  
 
 以下表格来自[OkGO文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#6%E4%B8%8A%E4%BC%A0string%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E6%9C%AC)的总结：
 
