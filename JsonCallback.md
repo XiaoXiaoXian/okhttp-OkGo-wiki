@@ -125,12 +125,12 @@
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/m0f1p.jpg)
 
 当你在使用BaseModel或者SomeCallback的时候，你会发现，不封装前代码好好的，就这么封装一下，什么都不干，代码居然就挂了，报的异常就是这样：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/64mzy.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fgsyrqosr1j314u070q6d.jpg)
 
 这是为什么呢，根本原因就是使用反射获取类上泛型的真实类型是有局限性的，只能获取一层继承结构的数据，层次再多，获取到的数据类型他就是T，不是什么真实类型，Gson无法解析，所以就挂了，为什么就获取不到了呢，详细还是参考前面给出讲解泛型的几篇文章的链接，里面都有很清晰的讲到。
 
 所以，最稳妥的办法，还是不要这么优化了，或者兼容一下写法，如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/zwn4b.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fgsys015nij31460ykgqj.jpg)
 
 是不是很失望，当然简单有简单的好，复杂有复杂的好，万物都是相生相克，物极必反就是这个道理。
 
@@ -147,7 +147,7 @@
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/z57j2.jpg)
 
 那么`JsonCallback`中就需要做改动了，详细的原理就不说了，直接上代码，详细看注释：
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fgi7am6wakj315s1lcn88.jpg)
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fgsys9yzykj315s1lcn7i.jpg)
 
 ## 总结
 分析优化前与优化后的写法，很明显优化前要方便、简单、通用，优化后更麻烦，还难以理解。那我在demo中为什么不使用优化前的方式呢？
