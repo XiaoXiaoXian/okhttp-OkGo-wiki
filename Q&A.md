@@ -1,4 +1,4 @@
-### 1. 遇到在5.0以上系统程序正常，5.0以下系统crash
+### 1. NoClassDefFoundError异常，或者在5.0以上系统程序正常，5.0以下系统crash等问题
 如果你的报错日志如下：
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fgslhf13tsj30g70a4q4m.jpg)
