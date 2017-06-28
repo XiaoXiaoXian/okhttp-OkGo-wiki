@@ -15,7 +15,8 @@
 ### [缓存使用](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache)
 - [缓存api介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#注意事项)
 - [callback回调顺序](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#回调顺序)
-- [项目中使用缓存]()
+- [缓存的手动操作](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#%E7%BC%93%E5%AD%98%E7%9A%84%E6%89%8B%E5%8A%A8%E6%93%8D%E4%BD%9C)
+- [项目中使用缓存](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache#%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98)
 
 ### [Cookie管理](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie)
 - [什么是cookie](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cookie#科普概念)
