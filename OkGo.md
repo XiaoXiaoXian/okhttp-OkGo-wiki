@@ -120,6 +120,9 @@
 #### 3). 如果你的服务器希望你在没有文件的时候依然使用`multipart/form-data`请求，那么可以使用`.isMultipart(true)`这个方法强制修改，一般来说是不需要强制的。
 ![](http://7xss53.com1.z0.glb.clouddn.com/markdown/eh7a3.jpg)
 
+有人说他有很多文件，不知道数量，又要一个文件对应一个key该怎么办，其实很简单，把调用链断开，用循环添加就行了嘛。
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fh13ukl8fdj31200lsq5r.jpg)
+
 ### 9.取消请求
 之前讲到，我们为每个请求前都设置了一个参数`tag`，取消就是通过这个`tag`来取消的。通常我们在`Activity`中做网络请求，当`Activity`销毁时要取消请求否则会发生内存泄露，那么就可以在`onDestory()`里面写如下代码：
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fgihsebgyjj31180a6js9.jpg)
