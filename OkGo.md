@@ -26,7 +26,7 @@
 
 - 这里演示的是一次普通请求所有能配置的参数，真实使用时不需要配置这么多，按自己的需要选择性的使用即可
 - 第一行的泛型一定要特别注意，这个表示你请求网络的数据类型是什么，必须指定，否则无法解析网络数据。
-- **.post(url)**：这个表示当前请求是post请求，当然一共支持GET，HEAD，OPTIONS，POST，PUT，DELETE, PATCH, TRACE这8种请求方式，你只需要改改这个方法名就行了，很方便。
+- **`.post(url)`**：这个表示当前请求是post请求，当然一共支持GET，HEAD，OPTIONS，POST，PUT，DELETE, PATCH, TRACE这8种请求方式，你只需要改改这个方法名就行了，很方便。
 - **`.params()`**：添加参数的时候,最后一个`isReplace`为可选参数,默认为`true`，即代表相同`key`的时候，后添加的会覆盖先前添加的。
 - **.tag(this)**：请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置。
 - **.isMultipart()**：该方法表示是否强制使用`multipart/form-data`表单上传，因为该框架在有文件的时候，无论你是否设置这个参数，默认都是`multipart/form-data`格式上传，但是如果参数中不包含文件，默认使用`application/x-www-form-urlencoded`格式上传，如果你的服务器要求无论是否有文件，都要使用表单上传，那么可以用这个参数设置为true。
@@ -36,6 +36,11 @@
 - **.headers()**：该方法是传递服务端需要的请求头，如果你不知道什么是请求头，[看wiki首页关于网络抓包中的http协议链接](https://github.com/jeasonlzy/okhttp-OkGo/wiki#%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85)。
 - **.params()**：该方法传递键值对参数，格式也是http协议中的格式，详细参考上面的http协议连接。
 - **.addUrlParams() .addFileParams() .addFileWrapperParams()**：这里是支持一个key传递多个文本参数，也支持一个key传递多个文件参数，详细也看上面的http协议连接。
+
+另外，每个请求都有一个`.client()`方法可以传递一个`OkHttpClient`对象，表示当前这个请求将使用外界传入的这个`OkHttpClient`对象，其他的请求还是使用全局的保持不变。那么至于这个`OkHttpClient`你想怎么配置，或者配置什么东西，那就随意了是不，改个超时时间，加个拦截器什么的统统都是可以的，看你心情喽。
+
+**特别注意**：
+如果你的当前请求使用的是你传递的`OkHttpClient`对象的话，那么当你调用`OkGo.getInstance().cancelTag(tag)`的时候，是取消不了这个请求的，因为`OkGo`只能取消使用全局配置的请求，不知道你这个请求是用你自己的`OkHttpClient`的，如果一定要取消，可以是使用`OkGo`提供的重载方法，详细看下方的[取消请求的部分](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo#9%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)。
 
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fgjdsnbok2j315s1me122.jpg)
 
@@ -125,7 +130,9 @@
 
 ### 9.取消请求
 之前讲到，我们为每个请求前都设置了一个参数`tag`，取消就是通过这个`tag`来取消的。通常我们在`Activity`中做网络请求，当`Activity`销毁时要取消请求否则会发生内存泄露，那么就可以在`onDestory()`里面写如下代码：
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fgihsebgyjj31180a6js9.jpg)
+
+注意以下取消的请求不要全部用，自己按需要写，我只是写出来，告诉你有这么几个方法。
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fh32m0l85wj310q0fkwgi.jpg)
 
 ### 10.同步请求
 
