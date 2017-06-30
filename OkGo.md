@@ -89,9 +89,9 @@
 > 3.如果上述响应头不存在,则检查下载的文件url,例如:`http://image.baidu.com/abc.jpg`,那么将会自动以`abc.jpg`命名文件<br>
 > 4.如果url也把文件名解析不出来,那么最终将以"unknownfile_" + System.currentTimeMillis()命名文件
 
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/vpo1d.jpg)
+这里面有个新对象叫`Progress`，关于这个对象的解释，[看这里我进行了专门的讲解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#progress%E5%AF%B9%E8%B1%A1)。
 
-这里面有个新对象叫`Progres`s，关于这个对象的解释，[看这里我进行了专门的讲解](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#progress%E5%AF%B9%E8%B1%A1)。
+![](http://7xss53.com1.z0.glb.clouddn.com/markdown/vpo1d.jpg)
 
 ### 6.上传String类型的文本
 一般此种用法用于与服务器约定的数据格式，当使用该方法时，params中的参数设置是无效的，所有参数均需要通过需要上传的文本中指定，此外，额外指定的header参数仍然保持有效。</br>
