@@ -76,7 +76,7 @@ builder.hostnameVerifier(new SafeHostnameVerifier());
 ```
 
 ### 7. 配置OkGo
-以上代码主要是`OkHttpClient`的配置，其实和OkGo也没啥关系，你要是使用其他`okhttp`的框架也得配置，d都是一样的，包括你配置其他拦截器什么的，只要`okhttp`支持的，你都可以加，都是有效的。那么下面的代码才是OkGo特有的配置，在初始化完成后，可以传入我们配置好的`OkHttpClient`，也可以配置其他参数，详细如下：
+以上代码主要是`OkHttpClient`的配置，其实和OkGo也没啥关系，你要是使用其他`okhttp`的框架也得配置，都是一样的，包括你配置其他拦截器什么的，只要`okhttp`支持的，你都可以加，都是有效的。那么下面的代码才是OkGo特有的配置，在初始化完成后，可以传入我们配置好的`OkHttpClient`，也可以配置其他参数，详细如下：
 ```java
 //---------这里给出的是示例代码,告诉你可以这么传,实际使用的时候,根据需要传,不需要就不传-------------//
 HttpHeaders headers = new HttpHeaders();
@@ -95,3 +95,5 @@ OkGo.getInstance().init(this)                       //必须调用初始化
     .addCommonHeaders(headers)                      //全局公共头
     .addCommonParams(params);                       //全局公共参数
 ```
+
+就这样，OkGo的全局配置就生效了，以后的每个请求都会按你的这个配置参数来，如果你想有些请求用他们自己的特有的配置，比如超时时间不一样啊，比如cookie管理不一样啊，比如加个什么特殊的拦截器啊，也是可以的，详细的就在[OkGo的使用文档里面](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkGo)。
