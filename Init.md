@@ -33,7 +33,8 @@ loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
 //log颜色级别，决定了log在控制台显示的颜色
 loggingInterceptor.setColorLevel(Level.INFO);
 builder.addInterceptor(loggingInterceptor);
-//第三方的开源库，使用通知显示当前请求的log
+
+//非必要情况，不建议使用，第三方的开源库，使用通知显示当前请求的log，不过在做文件下载的时候，这个库好像有问题，对文件判断不准确
 builder.addInterceptor(new ChuckInterceptor(this));
 ```
 
