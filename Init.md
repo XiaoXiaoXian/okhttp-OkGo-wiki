@@ -7,18 +7,25 @@
 - 超时重连次数
 - 公共的请求头和请求参数等信息
 
-## 不要忘记了在清单文件中注册 Aplication
-## 不要忘记了在清单文件中注册 Aplication
-## 不要忘记了在清单文件中注册 Aplication
+### 不要忘记了在清单文件中注册 Application
+### 不要忘记了在清单文件中注册 Application
+### 不要忘记了在清单文件中注册 Application
 
-OkGo的核心配置就是构造OkHttpClient，提供一个推荐的配置方法如下：
+### 1. 最简单的配置
+如果你什么都不想自己写，那么下面一行代码就够了。
+```
+OkGo.getInstance().init(this);
+```
+这样写是使用`OkGO`内部默认初始化的`OkHttpClient`来进行网络请求，包含了基本的log打印，超时时间和https相关的配置，但是建议还是自己配置好`OkHttpClient`传给`OkGo`比较好，详细自定义`OkHttpClient`的方法就是配置原生的`okhttp`的方法，建议的一些配置如下，都是可选的，如果需要你就加，不需要就别加了。
 
-### 1. 构建OkHttpClient.Builder
+### 2. 构建OkHttpClient.Builder
+这个不用多说，一行代码搞定
 ```java
 OkHttpClient.Builder builder = new OkHttpClient.Builder();
 ```
 
-### 2. 配置log
+### 3. 配置log
+可以使用OkGo内置的log拦截器打印log，如果你觉得不好用，也可以自己写个，这个没有限制。
 ```java
 HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
 //log打印级别，决定了log显示的详细程度
@@ -30,7 +37,8 @@ builder.addInterceptor(loggingInterceptor);
 builder.addInterceptor(new ChuckInterceptor(this));
 ```
 
-### 3. 配置超时时间
+### 4. 配置超时时间
+默认使用的超时时间就是60秒，如果你想改，可以自己设置
 ```java
 //全局的读取超时时间
 builder.readTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS); 
@@ -40,7 +48,8 @@ builder.writeTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
 builder.connectTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);   
 ```
 
-### 4. 配置Cookie，以下几种任选其一就行
+### 5. 配置Cookie，以下几种任选其一就行
+如果你用到了`Cookie`的持久化或者叫`Session`的保持，那么建议配置一个`Cookie`，这个也是可以自定义的，不一定非要用`OkGo`自己的，以下三个是`OkGo`默认提供的三种方式，可以选择添加，也可以自己实现`CookieJar`的接口，自己管理`cookie`。
 ```java
 //使用sp保持cookie，如果cookie不过期，则一直有效
 builder.cookieJar(new CookieJarImpl(new SPCookieStore(this)));  
@@ -50,7 +59,8 @@ builder.cookieJar(new CookieJarImpl(new DBCookieStore(this)));
 builder.cookieJar(new CookieJarImpl(new MemoryCookieStore()));   
 ```
 
-### 5. Https配置，以下几种方案根据需要自己设置
+### 6. Https配置，以下几种方案根据需要自己设置
+这个也是可以自定义的，`HttpsUtils`只是框架内部提供的方便管理`Https`的一个工具类，你也可以自己实现，最好只要给`OkHttpClient.Builder`传递一个`sslSocketFactory`就行。
 ```java
 //方法一：信任所有证书,不安全有风险
 HttpsUtils.SSLParams sslParams1 = HttpsUtils.getSslSocketFactory();
@@ -65,7 +75,8 @@ builder.sslSocketFactory(sslParams1.sSLSocketFactory, sslParams1.trustManager);
 builder.hostnameVerifier(new SafeHostnameVerifier());
 ```
 
-### 6. 配置OkGo
+### 7. 配置OkGo
+以上代码主要是`OkHttpClient`的配置，其实和OkGo也没啥关系，你要是使用其他`okhttp`的框架也得配置，d都是一样的，包括你配置其他拦截器什么的，只要`okhttp`支持的，你都可以加，都是有效的。那么下面的代码才是OkGo特有的配置，在初始化完成后，可以传入我们配置好的`OkHttpClient`，也可以配置其他参数，详细如下：
 ```java
 //---------这里给出的是示例代码,告诉你可以这么传,实际使用的时候,根据需要传,不需要就不传-------------//
 HttpHeaders headers = new HttpHeaders();
@@ -77,7 +88,7 @@ params.put("commonParamsKey2", "这里支持中文参数");
 //-------------------------------------------------------------------------------------//
 
 OkGo.getInstance().init(this)                       //必须调用初始化
-    .setOkHttpClient(builder.build())               //必须设置OkHttpClient
+    .setOkHttpClient(builder.build())               //建议设置OkHttpClient，不设置将使用默认的
     .setCacheMode(CacheMode.NO_CACHE)               //全局统一缓存模式，默认不使用缓存，可以不传
     .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)   //全局统一缓存时间，默认永不过期，可以不传
     .setRetryCount(3)                               //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
