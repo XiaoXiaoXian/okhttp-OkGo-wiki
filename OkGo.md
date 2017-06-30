@@ -29,13 +29,13 @@
 - **`.post(url)`**：这个表示当前请求是post请求，当然一共支持GET，HEAD，OPTIONS，POST，PUT，DELETE, PATCH, TRACE这8种请求方式，你只需要改改这个方法名就行了，很方便。
 - **`.params()`**：添加参数的时候,最后一个`isReplace`为可选参数,默认为`true`，即代表相同`key`的时候，后添加的会覆盖先前添加的。
 - **.tag(this)**：请求的tag，用于标识当前的请求，方便后续取消对应的请求，如果你不需要取消请求，也可以不用设置。
-- **.isMultipart()**：该方法表示是否强制使用`multipart/form-data`表单上传，因为该框架在有文件的时候，无论你是否设置这个参数，默认都是`multipart/form-data`格式上传，但是如果参数中不包含文件，默认使用`application/x-www-form-urlencoded`格式上传，如果你的服务器要求无论是否有文件，都要使用表单上传，那么可以用这个参数设置为true。
-- **.isSpliceUrl()**：该方法表示是否强制将params的参数拼接到url后面，默认false不拼接。一般来说，post、put等有请求体的方法应该把参数都放在请求体中，不应该放在url上，但是有的服务端可能不太规范，url和请求体都需要传递参数，那么这时候就使用该参数，他会将你所有使用`.params()`方法传递的参数，自动拼接在url后面。
-- **.retryCount()**：该方法是配置超时重连次数，也可以在全局初始化的时候设置，默认使用全局的配置，即为3次，你也可以在这里为你的这个请求特殊配置一个，并不会影响全局其他请求的超时重连次数。
-- **.cacheKey() .cacheTime() .cacheMode()**：这三个是缓存相关的配置，[详细请看缓存介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache)
-- **.headers()**：该方法是传递服务端需要的请求头，如果你不知道什么是请求头，[看wiki首页关于网络抓包中的http协议链接](https://github.com/jeasonlzy/okhttp-OkGo/wiki#%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85)。
-- **.params()**：该方法传递键值对参数，格式也是http协议中的格式，详细参考上面的http协议连接。
-- **.addUrlParams() .addFileParams() .addFileWrapperParams()**：这里是支持一个key传递多个文本参数，也支持一个key传递多个文件参数，详细也看上面的http协议连接。
+- **`.isMultipart()`**：该方法表示是否强制使用`multipart/form-data`表单上传，因为该框架在有文件的时候，无论你是否设置这个参数，默认都是`multipart/form-data`格式上传，但是如果参数中不包含文件，默认使用`application/x-www-form-urlencoded`格式上传，如果你的服务器要求无论是否有文件，都要使用表单上传，那么可以用这个参数设置为true。
+- **`.isSpliceUrl()`**：该方法表示是否强制将params的参数拼接到url后面，默认false不拼接。一般来说，post、put等有请求体的方法应该把参数都放在请求体中，不应该放在url上，但是有的服务端可能不太规范，url和请求体都需要传递参数，那么这时候就使用该参数，他会将你所有使用`.params()`方法传递的参数，自动拼接在url后面。
+- **`.retryCount()`**：该方法是配置超时重连次数，也可以在全局初始化的时候设置，默认使用全局的配置，即为3次，你也可以在这里为你的这个请求特殊配置一个，并不会影响全局其他请求的超时重连次数。
+- **`.cacheKey() .cacheTime() .cacheMode()`**：这三个是缓存相关的配置，[详细请看缓存介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Cache)
+- **`.headers()`**：该方法是传递服务端需要的请求头，如果你不知道什么是请求头，[看wiki首页关于网络抓包中的http协议链接](https://github.com/jeasonlzy/okhttp-OkGo/wiki#%E7%BD%91%E7%BB%9C%E6%8A%93%E5%8C%85)。
+- **`.params()`**：该方法传递键值对参数，格式也是http协议中的格式，详细参考上面的http协议连接。
+- **`.addUrlParams() .addFileParams() .addFileWrapperParams()`**：这里是支持一个key传递多个文本参数，也支持一个key传递多个文件参数，详细也看上面的http协议连接。
 
 另外，每个请求都有一个`.client()`方法可以传递一个`OkHttpClient`对象，表示当前这个请求将使用外界传入的这个`OkHttpClient`对象，其他的请求还是使用全局的保持不变。那么至于这个`OkHttpClient`你想怎么配置，或者配置什么东西，那就随意了是不，改个超时时间，加个拦截器什么的统统都是可以的，看你心情喽。
 
