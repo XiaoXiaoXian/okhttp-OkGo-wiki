@@ -48,7 +48,7 @@
 先看Response对象内部的字段：
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fgkxb7osg7j30vw074my2.jpg)
 该对象一共有5个字段，分别表示以下意思：
-- **body**：当前返回的数据，T即为数据的泛型。使用方法`body()`获取该值。
+- **body**：当前返回的数据，T即为数据的泛型。使用方法`body()`获取该值。如果请求成功，回调`onSuccess()`，该字段为`convertResponse()`解析数据后返回的数据。如果发生异常，回调`onError()`，该字段值为`null`。
 - **throwable**：如果发生异常，回调`onError()`，该字段保存了当前的异常信息。如果请求成功，回调`onSuccess()`，该字段为`null`。使用方法`getException()`获取该值。
 - **isFromCache**：表示当前的数据是来自哪里，`true`：来自缓存，`false`：来自网络。使用方法`isFromCache()`获取该值。
 - **rawCall**：表示当前请求的真正`okhttp3.Call`对象。使用方法`getRawCall()`获取该值。
