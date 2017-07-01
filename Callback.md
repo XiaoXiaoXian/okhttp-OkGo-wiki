@@ -9,7 +9,9 @@
 
 ## 内置Callback
 库中默认提供了4个Callback，也就是对`convertResponse()`这个方法的默认实现，再介绍`Callback`之前，我先详细说一下convertResponse这个方法的作用，以及他在源码中的调用时机，这个理解了，对自定义callback有很大帮助，先给张图，这是部分源码：
-![](https://ws2.sinaimg.cn/large/006tNc79ly1fh468bonhlj313u0mytcp.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fh48xgajirj31kw0tqk86.jpg)
+
 图中画红线的地方就是调用`convertResponse`的地方，之所以能这么写，是因为我们的`Callback`接口继承了`Converter`接口，所以我们能获取到这个方法并调用。而最外层整个这个方法叫`onResponse`方法，其实就`是okhttp`默认的成功回调 的方法，他是在子线程的，我们直接在子线程中调用了`convertResponse`方法，所以这个方法也是在子线程的。
 
 我们再把这个方法重头梳理一下逻辑，当我们请求成功后，当然`okhttp`只会给我们判断当前网络是不是通的，除非没有网络，或者请求超时等，才会回调`onFaile`方法，否则无论什么响应码，统统都是回调`onResponse`方法，所以我们看到源码中，第一行就先判断响应码是不是`404`或者大于等于`500`，如果是就直接回调触发`onError`方法，并且`return`掉。
