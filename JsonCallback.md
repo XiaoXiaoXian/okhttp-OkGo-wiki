@@ -115,7 +115,7 @@
 
 就这么简单的一个`JsonCallback`就能无论你什么网络数据都能解析成功并返回，而且以上的代码是通用的，可以直接复制，到哪都能用，是不是很简单，Retrofit默认的GsonConvert的核心也就是上面这几行代码。
 
-如果上面这点代码还是有问题，强烈建议不要自定义`Callback`了，直接用`StringCallback`，写法极其简单，就这样，再次强调第一行的泛型一定要写`String`，才能用`StringCallback`：
+如果上面这点代码还是有问题，强烈建议不要自定义`Callback`了，直接用框架内置的`StringCallback`，写法极其简单，就这样，再次强调第一行的泛型一定要写`String`，才能用`StringCallback`，否则无法编译通过：
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fgsxtabtmcj310i0h00v7.jpg)
 
 ## JsonCallback优化
