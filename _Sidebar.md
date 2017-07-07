@@ -5,6 +5,11 @@
 
 ### [使用常见问题看这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Q&A)
 
+### [传参与抓包（必看）](https://github.com/jeasonlzy/okhttp-OkGo/wiki/%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8A%93%E5%8C%85%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89)
+- [上传请求头](https://github.com/jeasonlzy/okhttp-OkGo/wiki/%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8A%93%E5%8C%85%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89#1-%E4%B8%8A%E4%BC%A0%E8%AF%B7%E6%B1%82%E5%A4%B4)
+- [params系列方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8A%93%E5%8C%85%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89#2-gethead%E7%AD%89%E6%97%A0%E8%AF%B7%E6%B1%82%E4%BD%93%E7%9A%84%E4%BC%A0%E5%8F%82%E6%96%B9%E5%BC%8F)
+- [up系列方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/%E4%BC%A0%E5%8F%82%E4%B8%8E%E6%8A%93%E5%8C%85%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89#4-up%E7%B3%BB%E5%88%97%E4%BC%A0%E5%8F%82%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D)
+
 ### [初始化](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init)
 - [全局配置](https://github.com/jeasonlzy/okhttp-OkGo/wiki/Init#全局配置)
 
