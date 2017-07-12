@@ -55,5 +55,13 @@
 - [取消请求](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkRx#%E5%8F%96%E6%B6%88%E8%AF%B7%E6%B1%82)
 
 ### [OkDownload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload)
+- [主要功能](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#okdownload%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD)
+- [全局配置](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
+- [Progress对象介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#progress%E5%AF%B9%E8%B1%A1)
+- [基本断点下载方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#%E5%9F%BA%E6%9C%AC%E6%96%AD%E7%82%B9%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95)
+- [所有断点API介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#%E4%B8%8B%E8%BD%BDapi%E4%BB%8B%E7%BB%8D)
+- [ProgressListener对象](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#progresslistener%E5%AF%B9%E8%B1%A1)
+- [监听取消](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#%E7%9B%91%E5%90%AC%E5%8F%96%E6%B6%88)
+- [DownloadManager对象](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#downloadmanager)
 
 ### [OkUpload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload)
