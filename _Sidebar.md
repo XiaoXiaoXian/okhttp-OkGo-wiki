@@ -65,3 +65,7 @@
 - [DownloadManager对象](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkDownload#downloadmanager)
 
 ### [OkUpload文档](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload)
+- [主要功能](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload#okupload%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD)
+- [全局配置](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
+- [基本上传方法](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload#%E5%9F%BA%E6%9C%AC%E4%B8%8A%E4%BC%A0%E6%96%B9%E6%B3%95)
+- [上传API介绍](https://github.com/jeasonlzy/okhttp-OkGo/wiki/OkUpload#%E4%B8%8A%E4%BC%A0api%E4%BB%8B%E7%BB%8D)
