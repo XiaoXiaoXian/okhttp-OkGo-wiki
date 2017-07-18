@@ -177,7 +177,7 @@
 这里讲一下常见的异常：
 #### 1. java.net.UnknownHostException: Unable to resolve host "server.jeasonlzy.com": No address associated with hostname
 
-![](https://ws4.sinaimg.cn/large/006tNc79ly1fho5ym12sqj31f60tidzn.jpg)
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fho6w52o8qj31f60tih3d.jpg)
 
 这种异常的原因就是你网络的问题
 1. 确定你url地址写对了？
