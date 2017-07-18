@@ -92,7 +92,7 @@ throw new IllegalStateException(msg);
 
 ### 4. FileCallBack
 如果要做文件下载，可以使用该回调，内部封装了关于文件下载和进度回调的方法，部分源码如下：
-![](http://7xss53.com1.z0.glb.clouddn.com/markdown/3xub1.jpg)
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fho5qf4y7pj316u1p6guo.jpg)
 
 ## 高级自定义Callback
 由此可以看出来，该网络框架的核心，即为`Callback`的使用的熟练程度，例如我们可以尝试自定义一个JsonCallback，将网络返回的JSON数据自动解析成对象，[详细的JsonCallback自定义方法请猛戳这里](https://github.com/jeasonlzy/okhttp-OkGo/wiki/JsonCallback)。
