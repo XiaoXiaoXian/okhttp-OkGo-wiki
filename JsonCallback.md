@@ -166,6 +166,31 @@
 那么`JsonCallback`中就需要做改动了，详细的原理就不说了，直接上代码，详细看注释：
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fgsys9yzykj315s1lcn7i.jpg)
 
+## 异常解析
+这时候有人说了，OkGo能不能判断是否有网络啊，如何知道网络超时啊，如何区分OkGo自己的异常和上面自定义Callback时用户抛出的异常啊？
+
+其实很简单，学过java基础的人，学没学过一个操作符叫`instanceof`，用于判断当前对象是否是某种类型的？我们就靠他来了。
+
+直接上代码
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fho6tvn36yj315u0oags7.jpg)
+
+这里讲一下常见的异常：
+#### 1. java.net.UnknownHostException: Unable to resolve host "server.jeasonlzy.com": No address associated with hostname
+
+![](https://ws4.sinaimg.cn/large/006tNc79ly1fho5ym12sqj31f60tidzn.jpg)
+
+这种异常的原因就是你网络的问题
+1. 确定你url地址写对了？
+2. 你的网络环境是正常的？还是只能内网才能访问？
+3. 是否开代理了，导致连不上？
+
+#### 2. java.net.SocketTimeoutException: failed to connect to server.jeasonlzy.com/69.85.84.104 (port 80) after 1ms
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fho6aoojslj31dm0qw7me.jpg)
+
+这很明显就是连接超时了嘛，我这里故意把超时时间设置为1ms，所以故意让他报的这个异常，解决办法就是
+1. 确定网络环境良好
+2. 超时时间设置是否正确
+
 ## 总结
 分析优化前与优化后的写法，很明显优化前要方便、简单、通用，优化后更麻烦，还难以理解。那我在demo中为什么不使用优化前的方式呢？
 
